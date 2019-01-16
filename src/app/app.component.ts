@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './post';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'application-blog-angular';
+  posts = [
+    new Post( 'Mon premier post','Un contenu très intéressant'),
+    new Post('Mon second post', 'Un contenu très intéressant encore'),
+    new Post ('Mon troisième post', 'Un contenu très intéressant pour un trpisièem post'),
+    ]
 }
