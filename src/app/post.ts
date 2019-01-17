@@ -9,6 +9,6 @@ export class Post {
     this.title = title;
     this.content = content;
     this.created_at = new Date();
-    this.loveIts = 0;
+    this.loveIts = -1;
   }
 }

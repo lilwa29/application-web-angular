@@ -13,5 +13,4 @@ export class PostListItemComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

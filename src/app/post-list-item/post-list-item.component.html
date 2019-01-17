@@ -1,6 +1,15 @@
-<li>
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.created_at | date  }}</p>
-  <p>{{ post.content }}</p>
-  <p>{{ post.loveIts }}</p>
+<li [ngClass]="{'list-group-item' : true ,
+                'list-group-item-success' : post.loveIts > 0,
+                'list-group-item-danger' : post.loveIts < 0}
+">
+    <div class="list-group-item-heading row">
+      <h2 class="col-8">{{ post.title }}</h2>
+      <div class="col-4 text-right font-italic">{{ post.created_at | date }}</div>
+    </div>
+    <p class="list-group-item-text text-justify">{{ post.content }}</p>
+    <p class="col-12">{{ post.loveIts }}</p>
+    <div class="col-12">
+      <button class="btn btn-success mr-1">Love it !</button>
+      <button class="btn btn-danger">Don't love it !</button>
+    </div>
 </li>
