@@ -1,3 +1,4 @@
+// Objet Post permettant l'instanciation d'un post.
 
 export class Post {
   title: string;
@@ -9,6 +10,6 @@ export class Post {
     this.title = title;
     this.content = content;
     this.created_at = new Date();
-    this.loveIts = -1;
+    this.loveIts = 0;
   }
 }

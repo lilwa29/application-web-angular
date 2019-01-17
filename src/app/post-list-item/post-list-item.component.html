@@ -4,12 +4,11 @@
 ">
     <div class="list-group-item-heading row">
       <h2 class="col-8">{{ post.title }}</h2>
-      <div class="col-4 text-right font-italic">{{ post.created_at | date }}</div>
+      <div class="col-4 text-right font-italic">{{ post.created_at | date : 'MM/d/yyyy, h:mm a' }}</div>
     </div>
-    <p class="list-group-item-text text-justify">{{ post.content }}</p>
-    <p class="col-12">{{ post.loveIts }}</p>
+    <p class="list-group-item-text">{{ post.content }}</p>
     <div class="col-12">
-      <button class="btn btn-success mr-1">Love it !</button>
-      <button class="btn btn-danger">Don't love it !</button>
+      <button (click)="onIncreaseLove()" class="btn btn-success mr-1">Love it !</button>
+      <button (click)="onDecreaseLove()" class="btn btn-danger">Don't love it !</button>
     </div>
 </li>
