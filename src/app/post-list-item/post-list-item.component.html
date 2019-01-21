@@ -3,12 +3,17 @@
                 'list-group-item-danger' : post.loveIts < 0}
 ">
     <div class="list-group-item-heading row">
-      <h2 class="col-8">{{ post.title }}</h2>
-      <div class="col-4 text-right font-italic">{{ post.created_at | date : 'MM/d/yyyy, h:mm a' }}</div>
+      <h2 class="col-md-8 col-sm-9 col-xs-12">{{ post.title }}</h2>
+      <div class="col-md-4 col-sm-3 col-xs-12 text-right font-italic">{{ post.created_at | date : 'MM/d/yyyy, h:mm a' }}</div>
     </div>
     <p class="list-group-item-text">{{ post.content }}</p>
-    <div class="col-12">
-      <button (click)="onIncreaseLove()" class="btn btn-success mr-1">Love it !</button>
-      <button (click)="onDecreaseLove()" class="btn btn-danger">Don't love it !</button>
+    <div class="row">
+      <div class="col-md-10 col-sm-8 col-xs-12">
+          <button (click)="onUpdateLoveIts(1)" class="btn btn-success mr-1">Love it !</button>
+          <button (click)="onUpdateLoveIts(-1)" class="btn btn-danger">Don't love it !</button>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <button (click)="onDelete()" class="btn btn-danger">Supprimer</button>
+      </div>
     </div>
 </li>
