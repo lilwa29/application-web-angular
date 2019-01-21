@@ -23,6 +23,18 @@ export class PostsService {
     this.emitPostsSubject();
   }
 
+  deletePost(index: number) {
+    this.posts.splice(index, 1);
+    this.savePostsToServer();
+    this.emitPostsSubject();
+  }
+
+  newPost(post: PostModel){
+    this.posts.push(post);
+    this.savePostsToServer();
+    this.emitPostsSubject();
+  }
+
   savePostsToServer() {
     this.httpClient.put('https://http-client-demo-dc845.firebaseio.com/posts.json', this.posts).subscribe(
       () => {
